@@ -22,7 +22,7 @@ This library enables declarative business rule definitions in JSON format. Rules
 
 ```4d
 // Create a new engine
-var $engine : cs.Engine:=cs.Engine.new()
+var $engine : cs.jre.Engine:=cs.jre.Engine.new()
 
 // Add a rule
 $engine.addRule({
@@ -60,9 +60,9 @@ The main entry point for the rules engine.
 
 ```4d
 // Constructor
-var $engine : cs.Engine:=cs.Engine.new()
+var $engine : cs.jre.Engine:=cs.jre.Engine.new()
 // Or with options
-var $engine : cs.Engine:=cs.Engine.new(Null; {allowUndefinedFacts: True})
+var $engine : cs.jre.Engine:=cs.jre.Engine.new(Null; {allowUndefinedFacts: True})
 ```
 
 **Methods:**
@@ -86,7 +86,7 @@ var $engine : cs.Engine:=cs.Engine.new(Null; {allowUndefinedFacts: True})
 Defines a rule with conditions and events.
 
 ```4d
-var $rule : cs.Rule:=cs.Rule.new({
+var $rule : cs.jre.Rule:=cs.jre.Rule.new({
     name: "my-rule";
     priority: 10;
     conditions: {
@@ -106,10 +106,10 @@ Represents a fact (data point) for rule evaluation.
 
 ```4d
 // Constant fact
-var $fact : cs.Fact:=cs.Fact.new("userName"; "John")
+var $fact : cs.jre.Fact:=cs.jre.Fact.new("userName"; "John")
 
 // Dynamic fact
-var $dynamicFact : cs.Fact:=cs.Fact.new("currentTime"; Formula(Current time))
+var $dynamicFact : cs.jre.Fact:=cs.jre.Fact.new("currentTime"; Formula(Current time))
 ```
 
 ### Almanac
@@ -147,7 +147,7 @@ Contains the result of a rule evaluation.
 ### Example 1: Basic Condition
 
 ```4d
-var $engine : cs.Engine:=cs.Engine.new()
+var $engine : cs.jre.Engine:=cs.jre.Engine.new()
 
 $engine.addRule({
     name: "adult-check";
@@ -175,7 +175,7 @@ var $result : Object:=$engine.run({age: 25})
 // Rule: Player fouls out if:
 // (5+ fouls AND 40-min game) OR (6+ fouls AND 48-min game)
 
-var $engine : cs.Engine:=cs.Engine.new()
+var $engine : cs.jre.Engine:=cs.jre.Engine.new()
 
 $engine.addRule({
     name: "foul-out-rule";
@@ -210,7 +210,7 @@ var $result : Object:=$engine.run($facts)
 ### Example 3: NOT Operator
 
 ```4d
-var $engine : cs.Engine:=cs.Engine.new()
+var $engine : cs.jre.Engine:=cs.jre.Engine.new()
 
 $engine.addRule({
     name: "not-minor";
@@ -234,7 +234,7 @@ var $result : Object:=$engine.run({age: 21})
 ### Example 4: Dynamic Facts
 
 ```4d
-var $engine : cs.Engine:=cs.Engine.new()
+var $engine : cs.jre.Engine:=cs.jre.Engine.new()
 
 // Add a dynamic fact that calculates at runtime
 $engine.addFact("currentHour"; Formula(Num(Substring(String(Current time); 1; 2))))
@@ -259,7 +259,7 @@ var $result : Object:=$engine.run({})
 ### Example 5: Fact Path Extraction
 
 ```4d
-var $engine : cs.Engine:=cs.Engine.new()
+var $engine : cs.jre.Engine:=cs.jre.Engine.new()
 
 $engine.addRule({
     name: "premium-user-check";
@@ -292,7 +292,7 @@ var $result : Object:=$engine.run($facts)
 ### Example 6: Custom Operator
 
 ```4d
-var $engine : cs.Engine:=cs.Engine.new()
+var $engine : cs.jre.Engine:=cs.jre.Engine.new()
 
 // Add a custom "between" operator
 $engine.addOperator("between"; Formula(($1>=$2[0]) && ($1<=$2[1])))
@@ -318,7 +318,7 @@ var $result : Object:=$engine.run({score: 75})
 ### Example 7: Rule Priority
 
 ```4d
-var $engine : cs.Engine:=cs.Engine.new()
+var $engine : cs.jre.Engine:=cs.jre.Engine.new()
 
 // Higher priority rules run first
 $engine.addRule({
@@ -346,7 +346,7 @@ var $result : Object:=$engine.run({check: True})
 ### Example 8: Named/Shared Conditions
 
 ```4d
-var $engine : cs.Engine:=cs.Engine.new()
+var $engine : cs.jre.Engine:=cs.jre.Engine.new()
 
 // Define a reusable condition
 $engine.setCondition("isPremium"; {
@@ -373,7 +373,7 @@ var $result : Object:=$engine.run({accountType: "premium"})
 ### Example 9: Fact Comparison
 
 ```4d
-var $engine : cs.Engine:=cs.Engine.new()
+var $engine : cs.jre.Engine:=cs.jre.Engine.new()
 
 // Compare one fact to another
 $engine.addRule({
@@ -400,7 +400,7 @@ var $result : Object:=$engine.run({
 ### Example 10: Stopping Execution
 
 ```4d
-var $engine : cs.Engine:=cs.Engine.new()
+var $engine : cs.jre.Engine:=cs.jre.Engine.new()
 
 $engine.addRule({
     name: "critical-error";
@@ -432,7 +432,7 @@ For each ($event; $result.failureEvents)
 End for each
 
 // All rule results with detailed information
-var $ruleResult : cs.RuleResult
+var $ruleResult : cs.jre.RuleResult
 For each ($ruleResult; $result.results)
     ALERT("Rule: "+String($ruleResult.name)+" Result: "+String($ruleResult.result))
 End for each
@@ -441,7 +441,7 @@ End for each
 ## Error Handling
 
 ```4d
-var $engine : cs.Engine:=cs.Engine.new()
+var $engine : cs.jre.Engine:=cs.jre.Engine.new()
 
 Try
     $engine.addRule({
