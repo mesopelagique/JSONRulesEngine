@@ -62,7 +62,7 @@ Function addRule($properties : Variant) : cs:C1710.Engine
 	
 	var $rule : cs:C1710.Rule
 	
-	If (OB Instance of:C1731($properties; cs:C1710.Rule))
+	If ((Value type:C1509($properties)=Is object:K8:27) && (OB Instance of:C1731($properties; cs:C1710.Rule)))
 		$rule:=$properties
 	Else 
 		var $props : Object:=$properties
@@ -113,7 +113,8 @@ Function updateRule($rule : cs:C1710.Rule)
 Function removeRule($rule : Variant) : Boolean
 	var $ruleRemoved : Boolean:=False:C215
 	
-	If (OB Instance of:C1731($rule; cs:C1710.Rule))
+	
+	If ((Value type:C1509($rule)=Is object:K8:27) && (OB Instance of:C1731($rule; cs:C1710.Rule)))
 		var $index : Integer:=This:C1470.rules.indexOf($rule)
 		If ($index>-1)
 			This:C1470.rules.remove($index)
