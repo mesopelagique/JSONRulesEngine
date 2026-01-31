@@ -1,0 +1,984 @@
+{
+	"_method_": {},
+	"cs.jre": {
+		"Rule": {
+			"new()": {
+				"Syntax": "**.new**( *options* : Variant )",
+				"Params": [
+					[
+						"options",
+						"Variant",
+						"->"
+					]
+				],
+				"Summary": ""
+			}
+		},
+		"Engine": {
+			"new()": {
+				"Syntax": "**.new**( *rules* : Collection; *options* : Object )",
+				"Params": [
+					[
+						"rules",
+						"Collection",
+						"->"
+					],
+					[
+						"options",
+						"Object",
+						"->"
+					]
+				],
+				"Summary": ""
+			}
+		},
+		"Almanac": {
+			"new()": {
+				"Syntax": "**.new**( *options* : Object )",
+				"Params": [
+					[
+						"options",
+						"Object",
+						"->"
+					]
+				],
+				"Summary": ""
+			}
+		},
+		"Fact": {
+			"new()": {
+				"Syntax": "**.new**( *id* : Text; *valueOrMethod* : Variant; *options* : Object )",
+				"Params": [
+					[
+						"id",
+						"Text",
+						"->"
+					],
+					[
+						"valueOrMethod",
+						"Variant",
+						"->"
+					],
+					[
+						"options",
+						"Object",
+						"->"
+					]
+				],
+				"Summary": ""
+			}
+		},
+		"Operator": {
+			"new()": {
+				"Syntax": "**.new**( *name* : Text; *evaluator* : 4D.Function; *validator* : 4D.Function )",
+				"Params": [
+					[
+						"name",
+						"Text",
+						"->"
+					],
+					[
+						"evaluator",
+						"4D.Function",
+						"->"
+					],
+					[
+						"validator",
+						"4D.Function",
+						"->"
+					]
+				],
+				"Summary": ""
+			}
+		},
+		"Condition": {
+			"new()": {
+				"Syntax": "**.new**( *properties* : Object )",
+				"Params": [
+					[
+						"properties",
+						"Object",
+						"->"
+					]
+				],
+				"Summary": ""
+			}
+		},
+		"RuleResult": {
+			"new()": {
+				"Syntax": "**.new**( *conditions* : cs.jre.Condition; *event* : Object; *priority* : Integer; *name* : Variant )",
+				"Params": [
+					[
+						"conditions",
+						"cs.jre.Condition",
+						"->"
+					],
+					[
+						"event",
+						"Object",
+						"->"
+					],
+					[
+						"priority",
+						"Integer",
+						"->"
+					],
+					[
+						"name",
+						"Variant",
+						"->"
+					]
+				],
+				"Summary": ""
+			}
+		},
+		"DefaultOperators": {
+			"new()": {
+				"Syntax": "**.new**()",
+				"Params": [],
+				"Summary": ""
+			}
+		}
+	},
+	"Rule": {
+		"toJSON()": {
+			"Syntax": "**.toJSON**() : Object",
+			"Params": [
+				[
+					"",
+					"Object",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"evaluate()": {
+			"Syntax": "**.evaluate**( *almanac* : cs.jre.Almanac ) : cs.jre.RuleResult",
+			"Params": [
+				[
+					"almanac",
+					"cs.jre.Almanac",
+					"->"
+				],
+				[
+					"",
+					"cs.jre.RuleResult",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"setEvent()": {
+			"Syntax": "**.setEvent**( *event* : Object ) : cs.jre.Rule",
+			"Params": [
+				[
+					"event",
+					"Object",
+					"->"
+				],
+				[
+					"",
+					"cs.jre.Rule",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"getEngine()": {
+			"Syntax": "**.getEngine**() : cs.jre.Engine",
+			"Params": [
+				[
+					"",
+					"cs.jre.Engine",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"setPriority()": {
+			"Syntax": "**.setPriority**( *priority* : Integer ) : cs.jre.Rule",
+			"Params": [
+				[
+					"priority",
+					"Integer",
+					"->"
+				],
+				[
+					"",
+					"cs.jre.Rule",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"getConditions()": {
+			"Syntax": "**.getConditions**() : cs.jre.Condition",
+			"Params": [
+				[
+					"",
+					"cs.jre.Condition",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"setConditions()": {
+			"Syntax": "**.setConditions**( *conditions* : Object ) : cs.jre.Rule",
+			"Params": [
+				[
+					"conditions",
+					"Object",
+					"->"
+				],
+				[
+					"",
+					"cs.jre.Rule",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"getEvent()": {
+			"Syntax": "**.getEvent**() : Object",
+			"Params": [
+				[
+					"",
+					"Object",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"setEngine()": {
+			"Syntax": "**.setEngine**( *engine* : cs.jre.Engine ) : cs.jre.Rule",
+			"Params": [
+				[
+					"engine",
+					"cs.jre.Engine",
+					"->"
+				],
+				[
+					"",
+					"cs.jre.Rule",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"getPriority()": {
+			"Syntax": "**.getPriority**() : Integer",
+			"Params": [
+				[
+					"",
+					"Integer",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"setName()": {
+			"Syntax": "**.setName**( *name* : Variant ) : cs.jre.Rule",
+			"Params": [
+				[
+					"name",
+					"Variant",
+					"->"
+				],
+				[
+					"",
+					"cs.jre.Rule",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"event": {
+			"Syntax": "event : Object"
+		},
+		"engine": {
+			"Syntax": "engine : cs.jre.Engine"
+		},
+		"conditions": {
+			"Syntax": "conditions : cs.jre.Condition"
+		},
+		"priority": {
+			"Syntax": "priority : Integer"
+		},
+		"name": {
+			"Syntax": "name : Variant"
+		}
+	},
+	"Engine": {
+		"run()": {
+			"Syntax": "**.run**( *runtimeFacts* : Object; *runOptions* : Object ) : Object",
+			"Params": [
+				[
+					"runtimeFacts",
+					"Object",
+					"->"
+				],
+				[
+					"runOptions",
+					"Object",
+					"->"
+				],
+				[
+					"",
+					"Object",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"stop()": {
+			"Syntax": "**.stop**() : cs.jre.Engine",
+			"Params": [
+				[
+					"",
+					"cs.jre.Engine",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"prioritizeRules()": {
+			"Syntax": "**.prioritizeRules**() : Collection",
+			"Params": [
+				[
+					"",
+					"Collection",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"getCondition()": {
+			"Syntax": "**.getCondition**( *name* : Text ) : cs.jre.Condition",
+			"Params": [
+				[
+					"name",
+					"Text",
+					"->"
+				],
+				[
+					"",
+					"cs.jre.Condition",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"addFact()": {
+			"Syntax": "**.addFact**( *id* : Variant; *valueOrMethod* : Variant; *options* : Object ) : cs.jre.Engine",
+			"Params": [
+				[
+					"id",
+					"Variant",
+					"->"
+				],
+				[
+					"valueOrMethod",
+					"Variant",
+					"->"
+				],
+				[
+					"options",
+					"Object",
+					"->"
+				],
+				[
+					"",
+					"cs.jre.Engine",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"removeFact()": {
+			"Syntax": "**.removeFact**( *factOrId* : Variant ) : Boolean",
+			"Params": [
+				[
+					"factOrId",
+					"Variant",
+					"->"
+				],
+				[
+					"",
+					"Boolean",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"removeOperator()": {
+			"Syntax": "**.removeOperator**( *operatorOrName* : Variant ) : Boolean",
+			"Params": [
+				[
+					"operatorOrName",
+					"Variant",
+					"->"
+				],
+				[
+					"",
+					"Boolean",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"getFact()": {
+			"Syntax": "**.getFact**( *factId* : Text ) : cs.jre.Fact",
+			"Params": [
+				[
+					"factId",
+					"Text",
+					"->"
+				],
+				[
+					"",
+					"cs.jre.Fact",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"setCondition()": {
+			"Syntax": "**.setCondition**( *name* : Text; *conditions* : Object ) : cs.jre.Engine",
+			"Params": [
+				[
+					"name",
+					"Text",
+					"->"
+				],
+				[
+					"conditions",
+					"Object",
+					"->"
+				],
+				[
+					"",
+					"cs.jre.Engine",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"removeRule()": {
+			"Syntax": "**.removeRule**( *rule* : Variant ) : Boolean",
+			"Params": [
+				[
+					"rule",
+					"Variant",
+					"->"
+				],
+				[
+					"",
+					"Boolean",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"updateRule()": {
+			"Syntax": "**.updateRule**( *rule* : cs.jre.Rule )",
+			"Params": [
+				[
+					"rule",
+					"cs.jre.Rule",
+					"->"
+				]
+			],
+			"Summary": ""
+		},
+		"addOperator()": {
+			"Syntax": "**.addOperator**( *operatorOrName* : Variant; *evaluator* : 4D.Function; *validator* : 4D.Function )",
+			"Params": [
+				[
+					"operatorOrName",
+					"Variant",
+					"->"
+				],
+				[
+					"evaluator",
+					"4D.Function",
+					"->"
+				],
+				[
+					"validator",
+					"4D.Function",
+					"->"
+				]
+			],
+			"Summary": ""
+		},
+		"addRule()": {
+			"Syntax": "**.addRule**( *properties* : Variant ) : cs.jre.Engine",
+			"Params": [
+				[
+					"properties",
+					"Variant",
+					"->"
+				],
+				[
+					"",
+					"cs.jre.Engine",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"removeCondition()": {
+			"Syntax": "**.removeCondition**( *name* : Text ) : Boolean",
+			"Params": [
+				[
+					"name",
+					"Text",
+					"->"
+				],
+				[
+					"",
+					"Boolean",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"prioritizedRules": {
+			"Syntax": "prioritizedRules : Collection"
+		},
+		"allowUndefinedFacts": {
+			"Syntax": "allowUndefinedFacts : Boolean"
+		},
+		"rules": {
+			"Syntax": "rules : Collection"
+		},
+		"facts": {
+			"Syntax": "facts : Object"
+		},
+		"status": {
+			"Syntax": "status : Text"
+		},
+		"conditions": {
+			"Syntax": "conditions : Object"
+		},
+		"operators": {
+			"Syntax": "operators : Object"
+		}
+	},
+	"Almanac": {
+		"factValue()": {
+			"Syntax": "**.factValue**( *factId* : Text; *params* : Object; *path* : Text ) : Variant",
+			"Params": [
+				[
+					"factId",
+					"Text",
+					"->"
+				],
+				[
+					"params",
+					"Object",
+					"->"
+				],
+				[
+					"path",
+					"Text",
+					"->"
+				],
+				[
+					"",
+					"Variant",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"getValue()": {
+			"Syntax": "**.getValue**( *value* : Variant ) : Variant",
+			"Params": [
+				[
+					"value",
+					"Variant",
+					"->"
+				],
+				[
+					"",
+					"Variant",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"addFact()": {
+			"Syntax": "**.addFact**( *id* : Variant; *valueOrMethod* : Variant; *options* : Object ) : cs.jre.Almanac",
+			"Params": [
+				[
+					"id",
+					"Variant",
+					"->"
+				],
+				[
+					"valueOrMethod",
+					"Variant",
+					"->"
+				],
+				[
+					"options",
+					"Object",
+					"->"
+				],
+				[
+					"",
+					"cs.jre.Almanac",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"addResult()": {
+			"Syntax": "**.addResult**( *ruleResult* : cs.jre.RuleResult )",
+			"Params": [
+				[
+					"ruleResult",
+					"cs.jre.RuleResult",
+					"->"
+				]
+			],
+			"Summary": ""
+		},
+		"addRuntimeFact()": {
+			"Syntax": "**.addRuntimeFact**( *factId* : Text; *value* : Variant )",
+			"Params": [
+				[
+					"factId",
+					"Text",
+					"->"
+				],
+				[
+					"value",
+					"Variant",
+					"->"
+				]
+			],
+			"Summary": ""
+		},
+		"getResults()": {
+			"Syntax": "**.getResults**() : Collection",
+			"Params": [
+				[
+					"",
+					"Collection",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"getEvents()": {
+			"Syntax": "**.getEvents**( *outcome* : Text ) : Collection",
+			"Params": [
+				[
+					"outcome",
+					"Text",
+					"->"
+				],
+				[
+					"",
+					"Collection",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"addEvent()": {
+			"Syntax": "**.addEvent**( *event* : Object; *outcome* : Text )",
+			"Params": [
+				[
+					"event",
+					"Object",
+					"->"
+				],
+				[
+					"outcome",
+					"Text",
+					"->"
+				]
+			],
+			"Summary": ""
+		},
+		"events": {
+			"Syntax": "events : Object"
+		},
+		"ruleResults": {
+			"Syntax": "ruleResults : Collection"
+		},
+		"allowUndefinedFacts": {
+			"Syntax": "allowUndefinedFacts : Boolean"
+		},
+		"factResultsCache": {
+			"Syntax": "factResultsCache : Object"
+		},
+		"factMap": {
+			"Syntax": "factMap : Object"
+		}
+	},
+	"Fact": {
+		"getCacheKey()": {
+			"Syntax": "**.getCacheKey**( *params* : Object ) : Text",
+			"Params": [
+				[
+					"params",
+					"Object",
+					"->"
+				],
+				[
+					"",
+					"Text",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"calculate()": {
+			"Syntax": "**.calculate**( *params* : Object; *almanac* : cs.jre.Almanac ) : Variant",
+			"Params": [
+				[
+					"params",
+					"Object",
+					"->"
+				],
+				[
+					"almanac",
+					"cs.jre.Almanac",
+					"->"
+				],
+				[
+					"",
+					"Variant",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"isDynamic()": {
+			"Syntax": "**.isDynamic**() : Boolean",
+			"Params": [
+				[
+					"",
+					"Boolean",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"isConstant()": {
+			"Syntax": "**.isConstant**() : Boolean",
+			"Params": [
+				[
+					"",
+					"Boolean",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"type": {
+			"Syntax": "type : Text"
+		},
+		"calculationMethod": {
+			"Syntax": "calculationMethod : 4D.Function"
+		},
+		"priority": {
+			"Syntax": "priority : Integer"
+		},
+		"value": {
+			"Syntax": "value : Variant"
+		},
+		"cache": {
+			"Syntax": "cache : Boolean"
+		},
+		"id": {
+			"Syntax": "id : Text"
+		}
+	},
+	"Operator": {
+		"evaluate()": {
+			"Syntax": "**.evaluate**( *factValue* : Variant; *conditionValue* : Variant ) : Boolean",
+			"Params": [
+				[
+					"factValue",
+					"Variant",
+					"->"
+				],
+				[
+					"conditionValue",
+					"Variant",
+					"->"
+				],
+				[
+					"",
+					"Boolean",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"validator": {
+			"Syntax": "validator : 4D.Function"
+		},
+		"evaluator": {
+			"Syntax": "evaluator : 4D.Function"
+		},
+		"name": {
+			"Syntax": "name : Text"
+		}
+	},
+	"Condition": {
+		"evaluate()": {
+			"Syntax": "**.evaluate**( *almanac* : cs.jre.Almanac; *operatorMap* : Object ) : Object",
+			"Params": [
+				[
+					"almanac",
+					"cs.jre.Almanac",
+					"->"
+				],
+				[
+					"operatorMap",
+					"Object",
+					"->"
+				],
+				[
+					"",
+					"Object",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"toJSON()": {
+			"Syntax": "**.toJSON**() : Object",
+			"Params": [
+				[
+					"",
+					"Object",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"isConditionReference()": {
+			"Syntax": "**.isConditionReference**() : Boolean",
+			"Params": [
+				[
+					"",
+					"Boolean",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"isBooleanOperator()": {
+			"Syntax": "**.isBooleanOperator**() : Boolean",
+			"Params": [
+				[
+					"",
+					"Boolean",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"valueResult": {
+			"Syntax": "valueResult : Variant"
+		},
+		"factResult": {
+			"Syntax": "factResult : Variant"
+		},
+		"all": {
+			"Syntax": "all : Collection"
+		},
+		"fact": {
+			"Syntax": "fact : Text"
+		},
+		"condition": {
+			"Syntax": "condition : Text"
+		},
+		"priority": {
+			"Syntax": "priority : Integer"
+		},
+		"name": {
+			"Syntax": "name : Text"
+		},
+		"params": {
+			"Syntax": "params : Object"
+		},
+		"value": {
+			"Syntax": "value : Variant"
+		},
+		"not": {
+			"Syntax": "not : cs.jre.Condition"
+		},
+		"result": {
+			"Syntax": "result : Boolean"
+		},
+		"path": {
+			"Syntax": "path : Text"
+		},
+		"any": {
+			"Syntax": "any : Collection"
+		},
+		"operator": {
+			"Syntax": "operator : Text"
+		}
+	},
+	"RuleResult": {
+		"toJSON()": {
+			"Syntax": "**.toJSON**() : Object",
+			"Params": [
+				[
+					"",
+					"Object",
+					"<-"
+				]
+			],
+			"Summary": ""
+		},
+		"setResult()": {
+			"Syntax": "**.setResult**( *result* : Boolean )",
+			"Params": [
+				[
+					"result",
+					"Boolean",
+					"->"
+				]
+			],
+			"Summary": ""
+		},
+		"name": {
+			"Syntax": "name : Variant"
+		},
+		"event": {
+			"Syntax": "event : Object"
+		},
+		"result": {
+			"Syntax": "result : Variant"
+		},
+		"priority": {
+			"Syntax": "priority : Integer"
+		},
+		"conditions": {
+			"Syntax": "conditions : Object"
+		}
+	},
+	"DefaultOperators": {
+		"create()": {
+			"Syntax": "**.create**() : Collection",
+			"Params": [
+				[
+					"",
+					"Collection",
+					"<-"
+				]
+			],
+			"Summary": ""
+		}
+	}
+}
