@@ -1,0 +1,15 @@
+{
+	"Example": {
+		"methods": [
+			"JRE_Example_CustomOperator",
+			"JRE_Example_DynamicFacts",
+			"JRE_Example_ECommerce",
+			"JRE_Example_FactComparison",
+			"JRE_Example_HelloWorld",
+			"JRE_Example_NestedLogic",
+			"JRE_Example_PathExtraction",
+			"JRE_Example_SharedConditions"
+		]
+	},
+	"trash": {}
+}
